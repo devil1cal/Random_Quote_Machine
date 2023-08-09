@@ -1,0 +1,217 @@
+*{
+  margin:0;
+  padding:0;
+}
+//main body of the app
+
+
+.mainbackground{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height:100vh;
+  min-width: 360px;
+  min-width: auto;
+  min-height: auto;
+  animation: myanimation 100s infinite;
+  z-index: -99;
+  
+  @keyframes myanimation {
+    0% {background-color: red;}
+    25%{background-color:yellow;}
+    50%{background-color:green;}
+    75%{background-color:brown;}
+    100% {background-color: red;}
+  }  
+}
+
+//image api box
+#grid {
+display: flex;
+position: relative;
+z-index:0;
+width: 360px;
+height:355px;
+margin:auto;
+padding-top:12.5%;
+padding-bottom:12.5%;
+ 
+  img {
+    display: flex;
+    position: absolute;
+    width:360px;
+    height: 350px;
+    object-fit:cover ;
+    margin: center;
+  }
+}
+
+//glassbox of the quote
+.quotePlace{
+  display: absolute;
+  z-index:1;
+  margin: auto;
+  padding-top: 10%;
+  width: 100%;
+  height: 100%;
+  max-width:320px;
+  max-height:390px;
+
+
+  .gridPlace{
+  display: absolute;
+    }
+  }
+
+.glassbox{
+  display: flex;
+  flex-flow: column;
+  margin-top: 2.5%;
+  width: 100%;
+  height: auto;
+  min-width:320px;
+  background: rgba( 184, 149, 149, 0.15 );
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 7px );
+  -webkit-backdrop-filter: blur( 7px );
+  border-radius: 10px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+
+  .quote-text-box{
+    margin:2.5%;
+    font-weight: 500;
+    font-size:1.15rem;
+    
+      .quote-text{
+        margin:5%;
+        text-align: center;
+      }   
+      .quote-author{
+        margin:2.5%;
+        text-align: right;
+      }
+  }
+}
+
+//button box with tweet icon
+.share-change{
+  display: flex;
+  justify-content:space-around;
+  align-items: center;
+  margin-bottom: 5%;
+
+}
+.quote-tweet{
+  width:auto;
+  height:auto;
+ 
+  .tweet-birb{
+    width:26px;
+    height:auto;
+  }
+}
+
+.glass-button {
+    z-index:0;
+    display: inline-block;
+    font-weight: 500;
+    font-size:1.5vh;
+    padding: 3%;
+    margin:2.5%;
+    text-decoration: none;
+    border-radius: 15px;
+    background-color: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.1);
+    backdrop-filter: blur(30px);
+    color: black;
+    font-size: 1.9vh;
+    letter-spacing: 2px;
+    cursor: pointer;
+    text-transform: uppercase;
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 7px );
+   -webkit-backdrop-filter: blur( 7px );
+  
+  
+ 
+  .glass-button:hover {
+    background-color: rgba(255,255,255,0.2);
+  }
+}
+
+
+//breakpoints
+$breakpoint-mobile:361px;
+$breakpoint-tablet:641px;
+$breakpoint-destop:1008px;
+
+@media (min-width:$breakpoint-mobile){}
+
+@media(min-width:$breakpoint-tablet){}
+
+@media(min-width:$breakpoint-destop){
+  .mainbackground{
+    width: 100%;
+    height:100%;
+    min-width:1080px;
+    margin: center;
+    -webkit-border:(2px solid black);
+
+  }
+  
+  
+  
+
+  #grid{
+    position: relative;
+    margin:center;
+    margin-top:2.5%;
+    width: 60vh;
+    height:60vh;
+    padding: 0;
+
+
+    img{
+      position:absolute;
+      width: 100%;
+      height: 100%;
+    
+    }
+  }
+
+  .quotePlace{
+    margin: auto;
+    margin-top:0.5%;
+    margin-bottom:3%;
+    padding:0;
+    width: 100%;
+    height: 100%;
+    max-width:600px;
+    max-height:350px;
+    
+    .glassbox{
+   margin:auto;
+  margin-top: 1.2%;
+  margin-bottom:2.5%;
+
+  width: 100%;
+  height: 100%;
+  max-width:540px;
+  max-height:3200px;
+    }
+  }
+}
+
+/*declaration only for Chrome/Safari*/
+@media screen and (-webkit-min-device-pixel-ratio:0) { 
+ 
+  .quotePlace{
+            margin-bottom:4.8%;
+      }
+
+       .glassbox{
+        margin:auto;
+       margin-top: 2.2%;
+       margin-bottom:2.5%;
+      }
+}

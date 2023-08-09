@@ -1,0 +1,648 @@
+/*import React from "react";
+import { Link } from "react-router-dom";
+
+import { Spinner } from "../../components/Spinner";
+import { PostAuthor } from "./PostAuthor";
+import { TimeAgo } from "./TimeAgo";
+import { ReactionButtons } from "./ReactionButtons";
+import { useGetPostsQuery } from "./apiSlice";
+
+let PostExcerpt = ({ post }) => {
+  return (
+    <article className="post-excerpt" key={post.id}>
+      <h3>{post.title}</h3>
+      <div>
+        <PostAuthor userId={post.user} />
+        <TimeAgo timestamp={post.date} />
+      </div>
+      <p className="post-content">{post.content.substring(0, 100)}</p>
+
+      <ReactionButtons post={post} />
+      <Link to={`/posts/${post.id}`} className="button muted-button">
+        View Post
+      </Link>
+    </article>
+  );
+};
+
+export const PostsList = () => {
+  const {
+    data: posts,
+    isLoading,
+    isSuccess,
+    isError,
+    error
+  } = useGetPostsQuery();
+
+  let content;
+
+  if (isLoading) {
+    content = <Spinner text="Loading..." />;
+  } else if (isSuccess) {
+    content = posts.map((post) => <PostExcerpt key={post.id} post={post} />);
+  } else if (isError) {
+    content = <div>{error.toString()}</div>;
+  }
+
+  return (
+    <section className="posts-list">
+      <h2>Posts</h2>
+      {content}
+    </section>
+  );
+};*/
+
+/*const baseURL = "https://api.quotable.io/random";
+
+export default function App() {
+  const [quote, setQuotes] = React.useState(null);
+
+  React.useEffect(() => {
+    axios.get(`${baseURL}`).then((response) => {
+      setQuotes(response.data);
+    });
+  }, []);
+
+  function createPost() {
+    axios.get(`${baseURL}`).then((response) => {
+      setQuotes(response.data);
+    });
+  }
+
+  if (!quote) return "No post!";
+
+  return (
+    <div>
+      <h1>{quote.author}</h1>
+      <p>{quote.content}</p>
+      <button onClick={createPost}>Create Post</button>
+    </div>
+  );
+}*/
+
+//import "./styles.css";
+//import React from "react";
+//import { Link } from "react-router-dom";
+//import { useGetPostsQuery } from "./apiSlice";
+
+//import { Spinner } from "../../components/Spinner";
+//import { PostAuthor } from "./PostAuthor";
+//import { TimeAgo } from "./TimeAgo";
+//import { ReactionButtons } from "./ReactionButtons";
+/*
+let PostExcerpt = ({ post }) => {
+  return (
+    <article className="post-excerpt" key={post.id}>
+      <h3>{post.title}</h3>
+      <div>
+        <span userId={post.user} />
+        <span timestamp={post.date} />
+      </div>
+      <p className="post-content">{post.content.substring(0, 100)}</p>
+
+      <button post={post} />
+      <Link to={`/posts/${post.id}`} className="button muted-button">
+        View Post
+      </Link>
+    </article>
+  );
+};
+
+export const App = () => {
+  const {
+    data: posts,
+    isLoading,
+    isSuccess,
+    isError,
+    error
+  } = useGetPostsQuery();
+
+  let content;
+
+  if (isLoading) {
+    content = <span text="Loading..." />;
+  } else if (isSuccess) {
+    content = posts.map((post) => <PostExcerpt key={post.id} post={post} />);
+  } else if (isError) {
+    content = <div>{error.toString()}</div>;
+  }
+
+  return (
+    <section className="posts-list">
+      <h2>Posts</h2>
+      {content}
+    </section>
+  );
+};*/
+
+//import React from "react";
+//import DisplayQuote from "./pageApi.js";
+//import jsFecth from "./storeApi.js";
+//import { Button, List } from "antd";
+//import axios from "axios";
+
+/*<script type="text/javascript">
+
+const api_url ="https://zenquotes.io/api/quotes/";
+
+async function getapi(url)
+{
+  const response = await fetch(url);
+  var data = await response.json();
+  console.log(data);
+}
+
+getapi(api_url);
+
+</script>*/
+
+/*
+const client = axios.create({
+  baseURL: "https://zenquotes.io/api/quotes/0" 
+}); */
+/*
+const baseURL = "https://zenquotes.io/api/quotes/1";
+
+export default function App() {
+  const [post, setPost] = React.useState(null);
+  const [error, setError] = React.useState(null);
+
+  React.useEffect(() => {
+    // invalid url will trigger an 404 error
+    axios
+      .get(`${baseURL}/1`)
+      .then((response) => {
+        setPost(response.data);
+        console.log(response.data);
+      })
+      .catch((error) => {
+        setError(error);
+      });
+  }, []);
+  if (error) return `Error: ${error.message}`;
+  if (!post) return "No post!";
+
+  return (
+    <div>
+      <h1>{post.a}</h1>
+      <p>{post.q}</p>
+    </div>
+  );
+}*/
+
+/*import { useAxios } from "use-axios-client";
+
+export default function App() {
+  const { data, error, loading } = useAxios({
+    url: "https://jsonplaceholder.typicode.com/posts/1"
+  });
+
+  if (loading || !data) return "Loading...";
+  if (error) return "Error!";
+
+  return (
+    <div>
+      <h1>{data.title}</h1>
+      <p>{data.body}</p>
+    </div>
+  );
+}*/
+
+/*
+const config = {
+  baseUrl: "https://zenquotes.io/api/quotes/"
+};
+
+export default function App() {
+  const [quotes, setQuotes] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const Quote = ({ q, a }) => {
+    return (
+      <span>
+        <strong>{q}</strong> &nbsp; <span>{a}</span>
+      </span>
+    );
+  };
+
+  const getQuotes = () => {
+    setQuotes([]);
+    setIsLoading(true);
+    fetch(config.basseUrl)
+      .then(function (response) {
+        return response.json();
+      })
+      .then((data) => {
+        setQuotes(data);
+        setIsLoading(false);
+      })
+      .catch(() => {
+        setIsLoading(false);
+      });
+  };
+
+  return (
+    <div>
+      <List
+        size="small"
+        loading={isLoading}
+        header={
+          <Button
+            onClick={() => getQuotes()}
+            type="primary"
+            disabled={isLoading}
+            size="large"
+          >
+            Fetch Quotes
+          </Button>
+        }
+        dataSource={quotes}
+        renderItem={(quote) => (
+          <List.Item>
+            <Quote text={quote.q} author={quote.a} />
+          </List.Item>
+        )}
+      />
+    </div>
+  );
+}*/
+
+/*import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import { axios } from "axios";
+
+const initialState = {
+  loading: false,
+  users: [],
+  error: ""
+};
+
+const fetchUsers = createAsyncThunk("user/fetchUsers", () => {
+  return axios
+    .get("https://jsonplaceholders.typicode.com/users")
+    .then((response) => response.data.map((quotes) => user.id));
+});
+
+const userSlice = createSlice({
+  name: "user",
+  initialState,
+  extraReducers: (builder) => {
+    builder.addCase(fetchUsers.pending, (state) => {
+      state.loading = true;
+    });
+    builder.addCase(fetchUsers.fulfilled, (state, action) => {
+      state.loading = false;
+      state.users = action.payload;
+      state.error = "";
+    });
+    builder.addCase(fetchUsers.rejected, (state, action) => {
+      state.loading = false;
+      state.users = [];
+      state.error = action.error.message;
+    });
+  }
+});
+
+const redSlice = userSlice.reducer;
+export default { redSlice, fetchUsers };*/
+
+//import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query";
+
+/*
+export const apiSlice = createApi({
+  // The cache reducer expects to be added at `state.api` (already default - this is optional)
+  reducerPath: "api",
+  // All of our requests will have URLs starting with '/fakeApi'
+  baseQuery: fetchBaseQuery({
+    baseUrl: "https://zenquotes.io/api/quotes/random"
+  }),
+  // The "endpoints" represent operations and requests for this server
+  endpoints: (builder) => ({
+    // The `getPosts` endpoint is a "query" operation that returns data
+    getPosts: builder.query({
+      // The URL for the request is '/fakeApi/posts'
+      query: () => "/posts"
+    })
+  })
+});
+
+export const { useGetPostsQuery } = apiSlice; */
+
+/*
+import React from "react";
+import axios from "axios";
+
+const baseURL = "https://jsonplaceholder.typicode.com/posts/1";
+
+export default function quate() {
+  const [post, setPost] = React.useState(null);
+
+  React.useEffect(() => {
+    axios.get(baseURL).then((response) => {
+      setPost(response.data);
+    });
+  }, []);
+  if (!post) return null;
+
+  return (
+    <div>
+      <h1>{post.title}</h1>
+      <p>{post.body}</p>
+    </div>
+  );
+}*/
+
+/*import axios from "axios";
+import React from "react";
+
+const baseURL = "https://jsonplaceholder.typicode.com/posts/1";
+
+export default function App() {
+  const [post, setPost] = React.useState(null);
+
+  React.useEffect(() => {
+    axios.get(baseURL).then((response) => {
+      setPost(response.data);
+    });
+  }, []);
+
+  if (!post) return null;
+
+  return (
+    <div>
+      <h1>{post.title}</h1>
+      <p>{post.body}</p>
+    </div>
+  );
+}*/
+
+/*import React, { Component } from "react";
+class BG extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      pictures: []
+    };
+  }
+
+  componentDidMount() {
+    fetch("https://randomuser.me/api/?results=264")
+      .then((results) => {
+        return results.json();
+      })
+      .then((data) => {
+        let pictures = data.results.map((pic) => {
+          return (
+            <div className="random-pic" key={pic.id}>
+              <img src={pic.picture.medium} />
+            </div>
+          );
+        });
+        this.setState({ pictures });
+        console.log(this.state.pictures);
+      });
+  }
+  render() {
+    return <div>{this.state.pictures}</div>;
+  }
+}
+
+export default BG;*/
+
+/*import axios from "axios";
+import React from "react";
+
+
+const bgURL ="https://api.thecatapi.com/v1/images/search";
+
+
+export default function Backgrounds() {
+
+  const [background, setBackgrounds] = React.useState(null);
+
+ 
+
+  React.useEffect(()=>{
+    axios.get(`${bgURL}`).then((response)=>{
+      setBackgrounds(response.data);
+    })
+  },[]);
+
+  function createBG() {
+    axios.get(`${bgURL}`).then((response) => {
+      setBackgrounds(response.data);
+    });
+  }
+
+  return (
+    <div className="bgImage">
+
+      </div>
+  );
+}
+*/
+
+/*import axios from "axios";
+import React from "react";
+//import baseURL from "./connection";
+const baseURL = "https://api.thecatapi.com/v1/images/search";
+
+export default function QuoteAuthor() {
+  const [quote, setQuotes] = React.useState(null);
+
+  React.useEffect(() => {
+    axios.get(`${baseURL}`).then((response) => {
+      setQuotes(response.data);
+    });
+  }, []);
+
+
+  function createPost() {
+    axios.get(`${baseURL}`).then((response) => {
+      setQuotes(response.data);
+    });
+  }
+
+  if (!quote) return "No post!";
+
+  return (
+    <div>
+      <p>{quote.author}</p>
+      <button onClick={createPost}>Create Post</button>
+    </div>
+  );
+}*/
+
+/*import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import { axios } from "axios";
+
+const initialState = {
+  loading: false,
+  users: [],
+  error: ""
+};
+
+const fetchUsers = createAsyncThunk("user/fetchUsers", () => {
+  return axios
+    .get("https://jsonplaceholders.typicode.com/users")
+    .then((response) => response.data.map((quotes) => user.id));
+});
+
+const userSlice = createSlice({
+  name: "user",
+  initialState,
+  extraReducers: (builder) => {
+    builder.addCase(fetchUsers.pending, (state) => {
+      state.loading = true;
+    });
+    builder.addCase(fetchUsers.fulfilled, (state, action) => {
+      state.loading = false;
+      state.users = action.payload;
+      state.error = "";
+    });
+    builder.addCase(fetchUsers.rejected, (state, action) => {
+      state.loading = false;
+      state.users = [];
+      state.error = action.error.message;
+    });
+  }
+});
+
+const redSlice = userSlice.reducer;
+export default { redSlice, fetchUsers };*/
+
+//import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query";
+
+/*
+export const apiSlice = createApi({
+  // The cache reducer expects to be added at `state.api` (already default - this is optional)
+  reducerPath: "api",
+  // All of our requests will have URLs starting with '/fakeApi'
+  baseQuery: fetchBaseQuery({
+    baseUrl: "https://zenquotes.io/api/quotes/random"
+  }),
+  // The "endpoints" represent operations and requests for this server
+  endpoints: (builder) => ({
+    // The `getPosts` endpoint is a "query" operation that returns data
+    getPosts: builder.query({
+      // The URL for the request is '/fakeApi/posts'
+      query: () => "/posts"
+    })
+  })
+});
+
+export const { useGetPostsQuery } = apiSlice; */
+
+/*
+import React from "react";
+import axios from "axios";
+
+const baseURL = "https://jsonplaceholder.typicode.com/posts/1";
+
+export default function quate() {
+  const [post, setPost] = React.useState(null);
+
+  React.useEffect(() => {
+    axios.get(baseURL).then((response) => {
+      setPost(response.data);
+    });
+  }, []);
+  if (!post) return null;
+
+  return (
+    <div>
+      <h1>{post.title}</h1>
+      <p>{post.body}</p>
+    </div>
+  );
+}*/
+
+/*import axios from "axios";
+import React from "react";
+
+const baseURL = "https://jsonplaceholder.typicode.com/posts/1";
+
+export default function App() {
+  const [post, setPost] = React.useState(null);
+
+  React.useEffect(() => {
+    axios.get(baseURL).then((response) => {
+      setPost(response.data);
+    });
+  }, []);
+
+  if (!post) return null;
+
+  return (
+    <div>
+      <h1>{post.title}</h1>
+      <p>{post.body}</p>
+    </div>
+  );
+}*/
+
+/*
+import React, { Component } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Button from "react-bootstrap/Button";
+
+//import "./storeApi.js";
+
+class DisplayQuote extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      input: "",
+      quotes: []
+    };
+    this.handleChange = this.handleChange.bind(this); //change it
+    this.changeQuote = this.changeQuote.bind(this); //change it
+  }
+
+  handleChange(event) {
+    this.setState(this.target.value);
+  } //change it
+  changeQuote(event) {
+    this.setState(this.tinput.value);
+  } //change it
+
+
+  render() {
+    return (
+      <div id="quote-box" className="quote-main-box container">
+        <div className="show-read">
+          <p id="text" className="quote-text text-center">
+            {// }
+ placeholder
+          </p>
+          <p id="author" className="quote-author">
+            {//}placeholder
+          </p>
+        </div> 
+
+        <div className="share-change">
+          <a
+            id="tweet-quote"
+            className="quote-tweet"
+            href="twitter.com/intent/tweet"
+            target="_blank"
+            onClick
+          >
+            <FontAwesomeIcon icon={["fab", "twitter"]} />
+            {//}
+          </a>
+
+          <Button
+            type="button"
+            id="quote-change"
+            className="btn btn-danger quote-button"
+            onClick
+          >
+            New Quote
+          </Button>
+        </div>
+      </div>
+    );
+  }
+}
+
+export default DisplayQuote;*/
