@@ -5,6 +5,17 @@
 - 💬 Online show case link is <a href="https://qbg1dq.csb.app/" > here<a/>
 
 
+
+# Overview
+- 🚧 Creating quote machine with cute cats. I used 2 different api services for this small project. <a href="https://documenter.getpostman.com/view/5578104/RWgqUxxh">The cat api</a> for the cute cats and <a href="https://github.com/lukePeavey/quotable">Quotable</a> for quotes. My main objection was seeing cute cats with different quotes and having little bit fun or smile put people faces when see it :)
+
+
+# Task List
+- [x] Creating working envoriment
+- [ ] Changing  different style later
+
+
+
 <h3 align="left">WHich language did I use :</h3>
 <p align="left"> 
  
