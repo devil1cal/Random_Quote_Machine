@@ -2,12 +2,12 @@
 
 
 - 🌱 İt is a simple quote machine with cats, created on CodeSandbox for freecode front end development libraries certification.
-- 💬 Online show case link is <a href="https://qbg1dq.csb.app/" > here<a/>
+- 💬 Online show case link is <a href="https://qbg1dq.csb.app/" target="_blank"> here<a/>
 
 
 
 # Overview
-- 🚧 Creating quote machine with cute cats. I used 2 different api services for this small project. <a href="https://documenter.getpostman.com/view/5578104/RWgqUxxh">The cat api</a> for the cute cats and <a href="https://github.com/lukePeavey/quotable">Quotable</a> for quotes. My main objection was seeing cute cats with different quotes and having little bit fun or smile put people faces when see it :)
+- 🚧 Creating quote machine with cute cats. I used 2 different api services for this small project. <a href="https://documenter.getpostman.com/view/5578104/RWgqUxxh" target="_blank">The cat api</a> for the cute cats and <a href="https://github.com/lukePeavey/quotable" target="_blank">Quotable</a> for quotes. My main objection was seeing cute cats with different quotes and having little bit fun or smile put people faces when see it :)
 
 
 # Task List
