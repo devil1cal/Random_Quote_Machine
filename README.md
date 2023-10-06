@@ -8,6 +8,7 @@
 
 # Overview
 - 🚧 Creating quote machine with cute cats. I used 2 different api services for this small project. <a href="https://documenter.getpostman.com/view/5578104/RWgqUxxh" target="_blank">The cat api</a> for the cute cats and <a href="https://github.com/lukePeavey/quotable" target="_blank">Quotable</a> for quotes. My main objection was seeing cute cats with different quotes and having little bit fun or smile put people faces when see it :)
+- I created this little gadget on fully react and responsive.
 
 
 # Task List
